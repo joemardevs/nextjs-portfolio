@@ -227,7 +227,7 @@ export default function Home() {
             <div className="flex flex-row items-center gap-2">
               <UsersIcon className="h-4 w-4 md:h-5 md:w-5 text-gray-500 dark:text-gray-400" />
               <h2 className="text-lg md:text-md font-semibold text-gray-950 dark:text-gray-50">
-                People I've Worked With
+                People I&apos;ve Worked With
               </h2>
             </div>
             <Link

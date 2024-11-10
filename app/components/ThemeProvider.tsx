@@ -1,16 +1,26 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Inter } from "next/font/google";
-import useThemeStore from "../store/theme.store";
 
 const inter = Inter({ subsets: ["latin"] });
 
 const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
-  const theme = useThemeStore(state => state.theme);
+  const [theme, setTheme] = useState<string | null>(null);
+
+  useEffect(() => {
+    const savedTheme = window.localStorage.getItem("theme");
+    const themeToApply = savedTheme || "light";
+    setTheme(themeToApply);
+    document.documentElement.className = themeToApply;
+  }, []);
+
+  if (theme === null) {
+    return null;
+  }
 
   return (
-    <html lang="en" className={theme}>
-      <body className={(inter.className, "bg-gray-50 dark:bg-gray-950")}>
+    <html lang="en" className={theme || "light"}>
+      <body className={`${inter.className} bg-gray-50 dark:bg-gray-950`}>
         {children}
       </body>
     </html>
