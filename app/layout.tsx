@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import ThemeProvider from "./components/ThemeProvider";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   title: "Joemar Palting - Software Engineer",
@@ -37,6 +38,7 @@ export default function RootLayout({
         </div>
       </div>
       <Analytics />
+      <SpeedInsights />
     </ThemeProvider>
   );
 }
