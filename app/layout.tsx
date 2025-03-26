@@ -30,10 +30,15 @@ export default function RootLayout({
         <div>
           <p className="text-gray-500 dark:text-gray-400 text-sm md:text-xs">
             ©{" "}
-            {new Date().getFullYear() === new Date().getFullYear()
+            {new Date().getFullYear() === 2024
               ? new Date().getFullYear()
               : `2024 - ${new Date().getFullYear()}`}{" "}
-            Joemar Palting. All rights reserved.
+            <a
+              href="https://www.linkedin.com/in/joemarpalting/"
+              target="_blank">
+              Joemar Palting
+            </a>
+            . All rights reserved.
           </p>
         </div>
       </div>

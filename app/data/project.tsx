@@ -1,5 +1,12 @@
 export const PROJECTS = [
   {
+    title: "Koppiku",
+    description:
+      "Koppiku is an F&B app streamlining orders, rewards, and store interactions. Built with React Native Expo, it features CI/CD using EAS and payment integration with Curlec for a seamless experience.",
+    stack: ["React Native", "Expo", "EAS", "NativeWind", "Curlec"],
+    link: "https://play.google.com/store/apps/details?id=com.thelaminar.koppiku&hl=en",
+  },
+  {
     title: "iGallery",
     description:
       "A mobile application and web application for Isabela&apos;s finest creations. Showcasing the province of Isabela&apos;s artworks and crafts.",
