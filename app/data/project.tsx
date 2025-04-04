@@ -8,8 +8,7 @@ export const PROJECTS = [
   },
   {
     title: "iGallery",
-    description:
-      "A mobile application and web application for Isabela&apos;s finest creations. Showcasing the province of Isabela&apos;s artworks and crafts.",
+    description: `A mobile application and web application for Isabela's finest creations. Showcasing the province of Isabela's artworks and crafts.`,
     stack: ["Laravel", "Livewire", "AlpineJS", "Tailwind CSS", "Filament"],
     link: "",
   },
