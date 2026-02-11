@@ -1,25 +1,39 @@
 "use client";
+
 import React, { useEffect, useState } from "react";
 import { Inter } from "next/font/google";
+import { Theme } from "@/lib/types";
 
 const inter = Inter({ subsets: ["latin"] });
 
-const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
-  const [theme, setTheme] = useState<string | null>(null);
+interface ThemeProviderProps {
+  children: React.ReactNode;
+}
+
+const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
+  const [mounted, setMounted] = useState(false);
+  const [theme, setTheme] = useState<Theme>("light");
 
   useEffect(() => {
-    const savedTheme = window.localStorage.getItem("theme");
-    const themeToApply = savedTheme || "light";
-    setTheme(themeToApply);
-    document.documentElement.className = themeToApply;
+    setMounted(true);
+    const savedTheme = localStorage.getItem("theme") as Theme | null;
+    const initialTheme = savedTheme || "light";
+    setTheme(initialTheme);
+    document.documentElement.className = initialTheme;
   }, []);
 
-  if (theme === null) {
-    return null;
+  if (!mounted) {
+    return (
+      <html lang="en" className="light">
+        <body className={`${inter.className} bg-gray-50 dark:bg-gray-950`}>
+          {children}
+        </body>
+      </html>
+    );
   }
 
   return (
-    <html lang="en" className={theme || "light"}>
+    <html lang="en" className={theme}>
       <body className={`${inter.className} bg-gray-50 dark:bg-gray-950`}>
         {children}
       </body>

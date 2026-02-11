@@ -1,4 +1,6 @@
-export const TECH_STACK = [
+import { TechStackItem } from "@/lib/types";
+
+export const TECH_STACK: TechStackItem[] = [
   {
     icon: () => (
       <svg

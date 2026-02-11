@@ -3,17 +3,22 @@ import "./globals.css";
 import ThemeProvider from "./components/ThemeProvider";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import {
+  SITE_NAME,
+  SITE_DESCRIPTION,
+  SITE_KEYWORDS,
+  FOOTER_YEAR_TEXT,
+  LINKEDIN_URL,
+} from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Joemar Palting - Software Engineer",
-  description: "A software engineer who builds web and mobile applications.",
-  keywords:
-    "Joemar Palting, software engineer, web developer, mobile developer, fullstack developer, software developer,developer, web applications, mobile applications",
-  authors: [
-    {
-      name: "Joemar Palting",
-    },
-  ],
+  title: {
+    default: `${SITE_NAME} - Software Engineer`,
+    template: `%s - ${SITE_NAME}`,
+  },
+  description: SITE_DESCRIPTION,
+  keywords: SITE_KEYWORDS,
+  authors: [{ name: SITE_NAME }],
   publisher: "Vercel",
 };
 
@@ -29,14 +34,9 @@ export default function RootLayout({
         <div className="border-t border-gray-200 dark:border-gray-800 my-4 md:my-8" />
         <div>
           <p className="text-gray-500 dark:text-gray-400 text-sm md:text-xs">
-            ©{" "}
-            {new Date().getFullYear() === 2024
-              ? new Date().getFullYear()
-              : `2024 - ${new Date().getFullYear()}`}{" "}
-            <a
-              href="https://www.linkedin.com/in/joemarpalting/"
-              target="_blank">
-              Joemar Palting
+            © {FOOTER_YEAR_TEXT}{" "}
+            <a href={LINKEDIN_URL} target="_blank">
+              {SITE_NAME}
             </a>
             . All rights reserved.
           </p>

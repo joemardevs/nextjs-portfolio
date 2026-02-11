@@ -1,4 +1,5 @@
 "use client";
+
 import {
   Popover,
   PopoverButton,
@@ -11,15 +12,9 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { Fragment } from "react";
 import ThemeToggle from "./ThemeToggle";
+import { NAV_LINKS } from "@/lib/constants";
 
-const links = [
-  { label: "About", href: "/about" },
-  { label: "Project", href: "/project" },
-  { label: "Service", href: "/service" },
-  { label: "Testimonial", href: "/testimonial" },
-];
-
-const Navigations = () => {
+const Navigations: React.FC = () => {
   const pathname = usePathname();
 
   return (
@@ -32,7 +27,7 @@ const Navigations = () => {
         </Link>
 
         <ul className="hidden md:flex items-center">
-          {links.map(({ label, href }) => (
+          {NAV_LINKS.map(({ label, href }) => (
             <li key={href}>
               <Link
                 href={href}
@@ -40,7 +35,7 @@ const Navigations = () => {
                   "rounded-md px-4 py-2 text-sm text-gray-900 dark:text-gray-100",
                   pathname === href
                     ? "bg-gray-100 dark:bg-gray-900"
-                    : "font-normal"
+                    : "font-normal",
                 )}>
                 {label}
               </Link>
@@ -66,9 +61,9 @@ const Navigations = () => {
                 leave="transition ease-in duration-150"
                 leaveFrom="opacity-100 translate-y-0"
                 leaveTo="opacity-0 translate-y-1">
-                <PopoverPanel className="absolute right-0 z-10 w-40 origin-top-right overflow-auto rounded-xl bg-white dark:bg-black p-2 text-base shadow-md  focus:outline-none sm:text-sm ">
+                <PopoverPanel className="absolute right-0 z-10 w-40 origin-top-right overflow-auto rounded-xl bg-white dark:bg-black p-2 text-base shadow-md focus:outline-none sm:text-sm">
                   <div className="grid">
-                    {links.map(link => (
+                    {NAV_LINKS.map(link => (
                       <Link
                         key={link.href}
                         href={link.href}
@@ -77,7 +72,7 @@ const Navigations = () => {
                           "rounded-md px-4 py-2 text-sm text-gray-900 dark:text-gray-100",
                           pathname === link.href
                             ? "bg-gray-100 dark:bg-gray-900"
-                            : "font-normal"
+                            : "font-normal",
                         )}>
                         {link.label}
                       </Link>
