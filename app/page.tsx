@@ -59,7 +59,7 @@ export default function Home() {
               </p>
               <ArrowRightIcon className="h-3 md:h-4 w-3 md:w-4 text-gray-200 dark:text-gray-700" />
             </a>
-            <a
+            {/* <a
               href="/PALTING, JOEMAR.pdf"
               target="_blank"
               className="border-gray-500 dark:border-gray-600 border w-fit py-1 px-2 md:px-4 md:py-2 rounded-lg md:rounded-lg cursor-pointer flex gap-1 md:gap-2 items-center transform transition-transform hover:-translate-y-1">
@@ -67,7 +67,7 @@ export default function Home() {
               <p className="text-xs md:text-md font-normal text-gray-600 dark:text-gray-300">
                 Resume
               </p>
-            </a>
+            </a> */}
           </div>
         </div>
 
@@ -117,7 +117,7 @@ export default function Home() {
                       "flex items-center justify-center w-2 h-2 md:w-3 md:h-3 rounded-full -left-1 md:-left-[6px] absolute",
                       isPresent
                         ? "bg-gray-900 dark:bg-gray-100"
-                        : "border border-gray-900 dark:border-gray-100 bg-gray-100 dark:bg-gray-900"
+                        : "border border-gray-900 dark:border-gray-100 bg-gray-100 dark:bg-gray-900",
                     )}
                   />
                   <div className="flex flex-col md:flex-row md:justify-between md:gap-2">
@@ -302,7 +302,7 @@ export default function Home() {
                       </h2>
                     </div>
                   </div>
-                )
+                ),
             )}
           </div>
         </div>

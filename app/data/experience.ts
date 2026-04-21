@@ -1,11 +1,11 @@
 import { Experience } from "@/lib/types";
 
 export const EXPERIENCE: Experience[] = [
-  {
-    title: "Full-Stack Developer",
-    company: "Freelancer",
-    date: "August 2023 - Present",
-  },
+  // {
+  //   title: "Full-Stack Developer",
+  //   company: "Freelancer",
+  //   date: "August 2023 - Present",
+  // },
   {
     title: "Software Developer",
     company: "Radztech Business Solutions",

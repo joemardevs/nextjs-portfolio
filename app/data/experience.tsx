@@ -1,9 +1,9 @@
 export const EXPERIENCE = [
-  {
-    title: "Full-Stack Developer",
-    company: "Freelancer",
-    date: "August 2023 - Present",
-  },
+  // {
+  //   title: "Full-Stack Developer",
+  //   company: "Freelancer",
+  //   date: "August 2023 - Present",
+  // },
   {
     title: "Software Developer",
     company: "Radztech Business Solutions",
